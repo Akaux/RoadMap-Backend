@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boletim — Trilha Backend</title>
+<meta name="description" content="Boletim com as notas das provas de cada seção da trilha backend.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="dot">●</span><strong>trilha</strong><span class="suffix">/backend</span></a>
+    <div class="topbar-progress" role="group" aria-label="Progresso geral da trilha">
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-label mono" id="progressLabel">0 / 0</span>
+    </div>
+    <nav class="topbar-links">
+      <a href="index.html" class="pill-link">Trilha</a>
+      <a href="boletim.html" class="pill-link active">Boletim</a>
+    </nav>
+  </div>
+</header>
+
+<main class="boletim-wrap">
+  <div class="boletim-header">
+    <p class="hero-eyebrow mono">seu desempenho</p>
+    <h1>Boletim escolar</h1>
+    <p>Notas das provas de cada seção, calculadas a partir dos seus acertos. Refaça qualquer prova quando quiser — a nota mais recente é a que vale.</p>
+  </div>
+
+  <div class="summary-cards">
+    <div class="summary-card">
+      <p class="lbl mono">média geral</p>
+      <p class="val mono signal" id="mediaGeral">—</p>
+    </div>
+    <div class="summary-card">
+      <p class="lbl mono">provas feitas</p>
+      <p class="val mono" id="provasFeitas">0/0</p>
+    </div>
+    <div class="summary-card">
+      <p class="lbl mono">trilha concluída</p>
+      <p class="val mono amber" id="trilhaPct">0%</p>
+    </div>
+  </div>
+
+  <table class="report-table">
+    <thead>
+      <tr>
+        <th>Seção</th>
+        <th>Aulas</th>
+        <th>Nota</th>
+        <th>Data</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="boletimBody"></tbody>
+  </table>
+
+  <p class="empty-note" id="emptyNote" hidden>Nenhuma prova feita ainda. Volte para a trilha e complete uma seção para ver sua nota aqui.</p>
+</main>
+
+<footer class="site-footer">
+  trilha/backend — roteiro de estudo independente inspirado no roadmap.sh · progresso salvo neste navegador
+</footer>
+
+<script src="data.js"></script>
+<script src="boletim.js"></script>
+</body>
+</html>

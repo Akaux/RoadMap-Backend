@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trilha Backend — aprenda backend do zero</title>
+<meta name="description" content="Trilha de estudos backend baseada no roadmap.sh, com progresso, provas e boletim.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="dot">●</span><strong>trilha</strong><span class="suffix">/backend</span></a>
+    <div class="topbar-progress" role="group" aria-label="Progresso geral da trilha">
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-label mono" id="progressLabel">0 / 0</span>
+    </div>
+    <nav class="topbar-links">
+      <a href="index.html" class="pill-link active">Trilha</a>
+      <a href="boletim.html" class="pill-link">Boletim</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <p class="hero-eyebrow mono">baseado no roadmap.sh/backend</p>
+  <h1>Sua trilha para virar <em>desenvolvedor backend</em>.</h1>
+  <p class="lede">Onze estações, uma trilha só. Marque cada aula concluída, faça a prova ao final de cada seção e acompanhe sua nota no boletim. Sem enrolação — direto às fontes gratuitas que ensinam de verdade.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="num mono" id="statSections">11</span><span class="lbl">seções</span></div>
+    <div class="hero-stat"><span class="num mono" id="statLessons">0</span><span class="lbl">aulas</span></div>
+    <div class="hero-stat"><span class="num mono" id="statQuizzes">11</span><span class="lbl">provas</span></div>
+  </div>
+</section>
+
+<main class="pipeline" id="pipeline" aria-label="Roadmap de estudos backend">
+  <div class="pipeline-rail" aria-hidden="true"></div>
+  <!-- estações injetadas via JS -->
+</main>
+
+<footer class="site-footer">
+  trilha/backend — roteiro de estudo independente inspirado no roadmap.sh · progresso salvo neste navegador
+</footer>
+
+<!-- Modal de aula -->
+<div class="modal-overlay" id="lessonModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="lessonModalTitle">
+    <div class="modal-top">
+      <span class="modal-eyebrow mono" id="lessonModalSection">seção</span>
+      <button class="modal-close" id="lessonModalClose" aria-label="Fechar">✕</button>
+    </div>
+    <h3 id="lessonModalTitle">Título da aula</h3>
+    <p class="desc" id="lessonModalDesc">Descrição da aula.</p>
+    <p class="resource-label mono">onde estudar de graça</p>
+    <ul class="resource-list" id="lessonModalResources"></ul>
+    <button class="modal-mark-btn" id="lessonModalMarkBtn">Marcar como concluída</button>
+  </div>
+</div>
+
+<!-- Modal de prova -->
+<div class="modal-overlay" id="quizModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="quizModalTitle">
+    <div class="modal-top">
+      <span class="modal-eyebrow mono" id="quizModalEyebrow">prova</span>
+      <button class="modal-close" id="quizModalClose" aria-label="Fechar">✕</button>
+    </div>
+    <h3 id="quizModalTitle">Prova da seção</h3>
+
+    <div id="quizIntro">
+      <p class="desc" id="quizIntroDesc">Esta prova tem perguntas sobre o conteúdo da seção. Sua nota será calculada com base nos acertos e salva no boletim.</p>
+      <button class="modal-mark-btn" id="quizStartBtn">Começar prova</button>
+    </div>
+
+    <div id="quizPlay" hidden>
+      <p class="quiz-progress mono" id="quizProgress">Pergunta 1 de 5</p>
+      <p class="quiz-question" id="quizQuestion">Pergunta?</p>
+      <ul class="quiz-options" id="quizOptions"></ul>
+      <div class="quiz-nav">
+        <button class="quiz-nav-btn" id="quizNextBtn" disabled>Próxima</button>
+      </div>
+    </div>
+
+    <div id="quizDone" hidden>
+      <div class="quiz-result">
+        <div class="grade mono" id="quizGrade">10.0</div>
+        <p id="quizResultText">Você acertou 5 de 5 perguntas.</p>
+      </div>
+      <button class="quiz-result-btn" id="quizCloseBtn">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
