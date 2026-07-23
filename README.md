@@ -34,9 +34,7 @@ Também pode ser publicado em qualquer serviço de hospedagem estática (GitHub 
 backend-roadmap/
 ├── index.html          # página inicial com a trilha (pipeline de seções)
 ├── boletim.html         # página do boletim de notas
-├── css/
 │   └── style.css        # design system e estilos de toda a aplicação
-├── js/
 │   ├── data.js           # conteúdo da trilha: seções, aulas, recursos e provas
 │   ├── app.js             # lógica da home: progresso, modais de aula e de prova
 │   └── boletim.js         # lógica da página de boletim
